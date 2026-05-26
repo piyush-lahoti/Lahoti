@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Lahoti Plywood Center | Premium Plywood, Laminates & Timber Since 1975 | Best Quality</title>
+    <meta name="description" content="Lahoti Plywood Center - Leading supplier of premium plywood, decorative laminates, veneers, MDF, and timber. 45+ years of trust. Quality guaranteed, instant delivery. Best rates in city.">
+    <meta name="keywords" content="Lahoti Plywood Center, plywood, laminates, timber, veneer, MDF, wooden flooring, building materials, best plywood dealer">
+    <meta name="author" content="Lahoti Plywood Center">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.lahotiplywood.com">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Lahoti Plywood Center | Premium Plywood & Laminates | 45+ Years Trust">
+    <meta property="og:description" content="India's most trusted plywood destination. Premium laminates, plywood, veneers & timber. Quality assured since 1975.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lahotiplywood.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2c2418;
+            background: linear-gradient(135deg, #faf6f0 0%, #f2eadc 50%, #e8dccc 100%);
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, .logo, .hero-tagline, .section-title {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e8dccc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8b6914;
+            border-radius: 5px;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: rgba(44, 36, 24, 0.95);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(218, 185, 110, 0.3);
+        }
+        
+        .navbar.scrolled {
+            background: rgba(44, 36, 24, 0.98);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 24px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #e8c46b 0%, #c49a2a 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            display: block;
+            line-height: 1.2;
+            color: #e8c46b;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #f5e6c8;
+            transition: 0.3s;
+            font-size: 0.95rem;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #e8c46b, #c49a2a);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .btn-outline {
+            border: 2px solid #e8c46b;
+            padding: 8px 24px;
+            border-radius: 50px;
+            background: transparent;
+            font-weight: 700;
+            transition: all 0.3s;
+            color: #e8c46b !important;
+        }
+        
+        .btn-outline:hover {
+            background: #e8c46b;
+            color: #2c2418 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(232, 196, 107, 0.3);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #e8c46b;
+        }
+        
+        /* Hero Section with Slideshow Background */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Slideshow Container */
+        .slideshow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        /* Dark Overlay for better text readability */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+        
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 100px 0;
+        }
+        
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .hero-content {
+            flex: 1.2;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(232, 196, 107, 0.9);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #2c2418;
+            margin-bottom: 25px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.15;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #f5e6c8;
+            max-width: 90%;
+            margin-bottom: 35px;
+            font-weight: 500;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #e8c46b 0%, #c49a2a 100%);
+            border: none;
+            padding: 15px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: #2c2418;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #f0d48a 0%, #d4aa3a 100%);
+        }
+        
+        /* Stats Cards - Improved Readability */
+        .hero-stats {
+            flex: 0.8;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .stat-card {
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(10px);
+            padding: 30px 25px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            min-width: 150px;
+            border: 2px solid rgba(232, 196, 107, 0.5);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 0, 0, 0.85);
+            border-color: #e8c46b;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #e8c46b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+        
+        .stat-icon {
+            font-size: 1.8rem;
+            color: #e8c46b;
+            margin-top: 12px;
+        }
+        
+        /* Slideshow Indicators */
+        .slideshow-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 3;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .indicator.active {
+            background: #e8c46b;
+            width: 30px;
+            border-radius: 10px;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #2c2418;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #c49a2a, #e8c46b);
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+        
+        .section-sub {
+            text-align: center;
+            color: #5a4a34;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+        }
+        
+        /* Laminate Showcase */
+        .laminate-showcase {
+            background: rgba(232, 196, 107, 0.1);
+            border-radius: 60px;
+            padding: 50px 0;
+            margin-bottom: 50px;
+        }
+        
+        .laminate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .laminate-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        
+        .laminate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+        }
+        
+        .laminate-img {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #d4b88c, #c4a06a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .laminate-img i {
+            font-size: 4rem;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .laminate-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .laminate-card:hover .laminate-img::before {
+            left: 100%;
+        }
+        
+        .laminate-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .laminate-info h4 {
+            font-size: 1.3rem;
+            color: #2c2418;
+            margin-bottom: 10px;
+        }
+        
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 35px;
+        }
+        
+        .product-cat {
+            background: linear-gradient(135deg, #ffffff 0%, #fffaf2 100%);
+            border-radius: 30px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(200, 168, 107, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .product-cat:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+            border-color: #c49a2a;
+        }
+        
+        .product-icon {
+            font-size: 3rem;
+            color: #c49a2a;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .product-cat:hover .product-icon {
+            transform: scale(1.1);
+        }
+        
+        .product-cat h3 {
+            font-size: 1.7rem;
+            margin-bottom: 18px;
+            font-weight: 700;
+            color: #2c2418;
+        }
+        
+        .product-list {
+            list-style: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .product-list li {
+            font-size: 0.9rem;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0e6da;
+            color: #5a4a34;
+        }
+        
+        .product-list li i {
+            color: #c49a2a;
+            margin-right: 8px;
+            font-size: 0.7rem;
+        }
+        
+        /* Philosophy Section */
+        .philosophy {
+            background: linear-gradient(135deg, #e8dccc 0%, #ddceb4 100%);
+            border-radius: 60px;
+            margin: 20px;
+        }
+        
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            padding: 60px;
+        }
+        
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-item i {
+            font-size: 2.5rem;
+            color: #c49a2a;
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonial Slider */
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding: 20px 4px 40px;
+            scroll-snap-type: x mandatory;
+            cursor: grab;
+        }
+        
+        .testimonial-card {
+            min-width: 350px;
+            background: white;
+            border-radius: 30px;
+            padding: 35px;
+            scroll-snap-align: start;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid rgba(200,168,107,0.2);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+        }
+        
+        .testimonial-text {
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #3a2e1e;
+            line-height: 1.6;
+        }
+        
+        .testimonial-text i {
+            color: #c49a2a;
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+        
+        /* CTA Section */
+        .cta-wrapper {
+            background: linear-gradient(135deg, #2c2418 0%, #4a3a28 100%);
+            border-radius: 50px;
+            margin: 40px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1c1610;
+            color: #d4b88c;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .social-icons a {
+            color: #e8c46b;
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: 0.3s;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            color: #f0d48a;
+        }
+        
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border-radius: 50px;
+            padding: 14px 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            z-index: 99;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .grid-2col {
+                grid-template-columns: 1fr;
+                padding: 30px;
+            }
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .testimonial-card {
+                min-width: 280px;
+            }
+            .philosophy {
+                margin: 10px;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+            .stat-card {
+                padding: 20px 15px;
+                min-width: 120px;
+            }
+        }
+        
+        .mobile-nav-active {
+            display: flex !important;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background: #2c2418;
+            padding: 30px;
+            gap: 20px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Loading Animation */
+        .loading-spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #e8dccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s;
+        }
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #d4b88c;
+            border-top: 4px solid #c49a2a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="loading-spinner" id="loadingSpinner">
+    <div class="spinner"></div>
+</div>
+
+<div class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="logo" data-aos="fade-right">
+            <h1>Lahoti Plywood Center</h1>
+            <span>EST. 1975 | TRUST • QUALITY • EXCELLENCE</span>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#products">Products</a>
+            <a href="#laminates">Laminates</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact" class="btn-outline">Get Quote</a>
+        </div>
+        <div class="mobile-menu" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</div>
+
+<main>
+    <!-- Hero Section with Slideshow -->
+    <section id="home" class="hero">
+        <!-- Slideshow Background -->
+        <div class="slideshow-container" id="slideshowContainer">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=1600');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3badae6b9c6b?w=1600');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1605618323934-d4c1c6c9b9b8?w=1600');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1600');"></div>
+        </div>
+        
+        <!-- Dark Overlay for better text visibility -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Content -->
+        <div class="hero-content-wrapper">
+            <div class="container hero-grid">
+                <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="hero-badge">
+                        <i class="fas fa-trophy"></i> 45+ Years of Trust & Excellence
+                    </div>
+                    <h1>Premium Quality<br>Plywood & Laminates</h1>
+                    <p>Lahoti Plywood Center — Where strength meets elegance. India's most trusted destination for premium plywood, decorative laminates, veneers, and timber since 1975.</p>
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-gem"></i> Explore Our Range
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="hero-stats" data-aos="fade-left" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-number">45+</div>
+                        <div class="stat-label">Years of Legacy</div>
+                        <div class="stat-icon"><i class="fas fa-tree"></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15K+</div>
+                        <div class="stat-label">Happy Clients</div>
+                        <div class="stat-icon"><i class="fas fa-smile"></i></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2hr</div>
+                        <div class="stat-label">Express Delivery</div>
+                        <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slideshow Indicators -->
+        <div class="slideshow-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+            <div class="indicator" data-slide="2"></div>
+            <div class="indicator" data-slide="3"></div>
+            <div class="indicator" data-slide="4"></div>
+        </div>
+    </section>
+
+    <!-- Premium Laminates Showcase Section -->
+    <section id="laminates">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Premium Laminates Collection</h2>
+            <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Exquisite designs, textures & finishes to transform your spaces</p>
+            
+            <div class="laminate-showcase">
+                <div class="laminate-grid">
+                    <div class="laminate-card" data-aos="zoom-in" data-aos-delay="0">
+                        <div class="laminate-img"><i class="fas fa-border-all fa-4x"></i></div>
+                        <div class="laminate-info"><h4>Textured Laminates</h4><p>Linen, canvas, fine grain & leather finish</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
+                    </div>
+                    <div class="laminate-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="laminate-img"><i class="fas fa-gem fa-4x"></i></div>
+                        <div class="laminate-info"><h4>Glossy & Matte Finish</h4><p>High gloss, ultra matt & soft touch laminates</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
+                    </div>
+                    <div class="laminate-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="laminate-img"><i class="fas fa-leaf fa-4x"></i></div>
+                        <div class="laminate-info"><h4>Wooden Finish</h4><p>Natural oak, walnut, teak, mahogany veneers</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
+                    </div>
+                    <div class="laminate-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="laminate-img"><i class="fas fa-palette fa-4x"></i></div>
+                        <div class="laminate-info"><h4>Abstract & Designer</h4><p>Marble, stone, concrete & artistic patterns</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Range Section -->
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Our Complete Product Range</h2>
+            <p class="section-sub" data-aos="fade-up" data-aos-delay="100">One stop solution for all your wood & decorative needs</p>
+            <div class="product-grid">
+                <div class="product-cat" data-aos="zoom-in"><div class="product-icon"><i class="fas fa-layer-group"></i></div><h3>Laminates</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Textured Laminates</li><li><i class="fas fa-check-circle"></i> Glossy & Matte Finish</li><li><i class="fas fa-check-circle"></i> Acrylic & PVC Laminates</li><li><i class="fas fa-check-circle"></i> Digital Printing Series</li></ul></div>
+                <div class="product-cat" data-aos="zoom-in" data-aos-delay="50"><div class="product-icon"><i class="fas fa-border-all"></i></div><h3>Plywood</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Commercial Plywood</li><li><i class="fas fa-check-circle"></i> BWR & BWP Grade</li><li><i class="fas fa-check-circle"></i> Pre-laminated Plywood</li><li><i class="fas fa-check-circle"></i> Calibrated Plywood</li></ul></div>
+                <div class="product-cat" data-aos="zoom-in" data-aos-delay="100"><div class="product-icon"><i class="fas fa-venus-mars"></i></div><h3>Veneer</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Natural Veneers</li><li><i class="fas fa-check-circle"></i> Dyed & Smoke Veneers</li><li><i class="fas fa-check-circle"></i> Stone Veneers</li><li><i class="fas fa-check-circle"></i> Designer Veneers</li></ul></div>
+                <div class="product-cat" data-aos="zoom-in" data-aos-delay="150"><div class="product-icon"><i class="fas fa-cubes"></i></div><h3>MDF & Boards</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Plain & Waterproof MDF</li><li><i class="fas fa-check-circle"></i> HDHMR & Fluted MDF</li><li><i class="fas fa-check-circle"></i> WPC & PVC Sheets</li><li><i class="fas fa-check-circle"></i> Cement & OSB Boards</li></ul></div>
+                <div class="product-cat" data-aos="zoom-in" data-aos-delay="200"><div class="product-icon"><i class="fas fa-tree"></i></div><h3>Timber</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Teak Wood (Burma/Ghana)</li><li><i class="fas fa-check-circle"></i> Oak, Ash & Pine Wood</li><li><i class="fas fa-check-circle"></i> IPE & Live Edge Wood</li><li><i class="fas fa-check-circle"></i> Thermopine Wood</li></ul></div>
+                <div class="product-cat" data-aos="zoom-in" data-aos-delay="250"><div class="product-icon"><i class="fas fa-border-all"></i></div><h3>Wooden Flooring</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Vinyl Flooring</li><li><i class="fas fa-check-circle"></i> Laminated Flooring</li><li><i class="fas fa-check-circle"></i> SPC Flooring</li><li><i class="fas fa-check-circle"></i> Herringbone Design</li></ul></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us">
+        <div class="container philosophy">
+            <div class="grid-2col">
+                <div data-aos="fade-right">
+                    <h2 class="section-title" style="text-align: left;">What We Do?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Lahoti Plywood Center is one of the most trusted names in the timber industry, serving with excellence since 1975. We specialize in premium plywood, decorative laminates, veneers, MDF, and timber products for interior & exterior spaces.</p>
+                    <h3>Our Work Philosophy</h3>
+                    <p>We deliver quality materials at competitive prices with hassle-free service. Our customer-centric approach and commitment to timely delivery set us apart.</p>
+                </div>
+                <div data-aos="fade-left">
+                    <h2 class="section-title" style="text-align: left;">Why Choose Us?</h2>
+                    <div class="features-list">
+                        <div class="feature-item"><i class="fas fa-chart-line"></i><h4>System Oriented</h4><p>Efficient systems ensuring quality delivery</p></div>
+                        <div class="feature-item"><i class="fas fa-users"></i><h4>Customer First</h4><p>Understanding & fulfilling client needs</p></div>
+                        <div class="feature-item"><i class="fas fa-shipping-fast"></i><h4>Lightning Delivery</h4><p>Same-day dispatch with own fleet</p></div>
+                        <div class="feature-item"><i class="fas fa-building"></i><h4>Experience Center</h4><p>Touch & feel products before buying</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
+            <p class="section-sub" data-aos="fade-up">Trusted by generations — real stories from our valued customers</p>
+            <div class="testimonial-slider" id="testimonialSlider">
+                <div class="testimonial-card"><div class="testimonial-text"><i class="fas fa-quote-left"></i> Excellent quality plywood and laminates. Lahoti Plywood Center has been our go-to supplier for 15+ years. Best rates and honest advice.</div><div class="client-name">— Rajesh Mehta, Architect</div><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
+                <div class="testimonial-card"><div class="testimonial-text"><i class="fas fa-quote-left"></i> The laminate collection is amazing! They helped me choose the perfect finish for my home. Delivery was prompt and service was outstanding.</div><div class="client-name">— Priya Sharma, Homeowner</div><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
+                <div class="testimonial-card"><div class="testimonial-text"><i class="fas fa-quote-left"></i> Best plywood dealer in town! Even for small quantities they provide instant delivery. Highly recommended for quality and trust.</div><div class="client-name">— Suresh Kumar, Contractor</div><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="container cta-wrapper" data-aos="zoom-in-up">
+        <div class="cta-content">
+            <h3 style="font-size: 2.2rem; margin-bottom: 15px; color: #e8c46b;">Visit Our Experience Center</h3>
+            <p style="margin-bottom: 25px; color: #d4b88c; font-size: 1.1rem;">Explore 500+ laminate designs & plywood varieties. Get expert guidance for your dream project.</p>
+            <a href="#contact" class="btn-primary" style="background: #e8c46b; color:#2c2418;"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background: rgba(232, 196, 107, 0.08); border-radius: 60px; margin: 20px;">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title" data-aos="fade-up">Get Instant Quote</h2>
+            <p class="section-sub" data-aos="fade-up">Share your requirements — we'll respond within 2 hours with best pricing</p>
+            <form id="contactForm" data-aos="fade-up" style="display: flex; flex-direction: column; gap: 20px;">
+                <input type="text" placeholder="Full Name *" required style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
+                <input type="tel" placeholder="Phone Number *" required style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
+                <input type="email" placeholder="Email ID" style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
+                <select style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
+                    <option>Select product category</option><option>Laminates</option><option>Plywood</option><option>Timber</option><option>Veneer/MDF</option><option>Flooring</option>
+                </select>
+                <textarea rows="3" placeholder="Tell us your requirements (quantity, size, design preference)..." style="padding: 15px; border-radius: 25px; border: 2px solid #d4b88c; background: white;"></textarea>
+                <button type="submit" class="btn-primary" style="border: none; justify-content: center; background: #c49a2a; color:#2c2418;"><i class="fas fa-paper-plane"></i> Send Enquiry</button>
+            </form>
+            <div id="formSuccess" style="margin-top: 20px; text-align: center; color: #c49a2a; display: none; font-weight: 700;">✅ Thank you! Our team will contact you shortly.</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer-grid">
+        <div><h3 style="font-size: 1.8rem; margin-bottom: 10px; color: #e8c46b;">Lahoti Plywood Center</h3><p>Since 1975 — Strength, Trust & Precision</p><p><i class="fas fa-map-marker-alt"></i> Main Timber Market, Nagpur & Pune</p><p><i class="fas fa-phone-alt"></i> +91 98765 43210</p><div class="social-icons" style="margin-top: 20px;"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
+        <div><h4>Quick Links</h4><p><a href="#products" style="color:#d4b88c; text-decoration: none;">Products</a></p><p><a href="#laminates" style="color:#d4b88c; text-decoration: none;">Laminates</a></p><p><a href="#why-us" style="color:#d4b88c; text-decoration: none;">About Us</a></p><p>Experience Center</p></div>
+        <div><h4>Business Hours</h4><p>Mon-Sat: 9:30 AM - 8:00 PM</p><p>Sunday: 10:00 AM - 2:00 PM</p><div style="margin-top: 15px;"><i class="fab fa-whatsapp"></i> +91 98765 43210 (WhatsApp)</div></div>
+    </div>
+    <div class="container" style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid #3a2e20; font-size: 0.8rem;">© 2025 Lahoti Plywood Center – Premium Wood Solutions. All Rights Reserved. | SEO Optimized Website</div>
+</footer>
+
+<a href="https://wa.me/919876543210?text=Hello%20Lahoti%20Plywood%20Center%2C%20I%20need%20a%20quote%20for%20plywood%20and%20laminates" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp fa-lg"></i> Need help? Chat
+</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, offset: 100 });
+    
+    // Slideshow Functionality
+    const slides = document.querySelectorAll('.slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentSlide = 0;
+    let slideInterval;
+    
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle('active', i === index);
+        });
+        currentSlide = index;
+    }
+    
+    function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+    }
+    
+    function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 4000);
+    }
+    
+    function stopSlideshow() {
+        clearInterval(slideInterval);
+    }
+    
+    // Add click handlers to indicators
+    indicators.forEach((indicator, idx) => {
+        indicator.addEventListener('click', () => {
+            stopSlideshow();
+            showSlide(idx);
+            startSlideshow();
+        });
+    });
+    
+    // Start the slideshow
+    startSlideshow();
+    
+    // Pause slideshow on hover
+    const heroSection = document.querySelector('.hero');
+    heroSection.addEventListener('mouseenter', stopSlideshow);
+    heroSection.addEventListener('mouseleave', startSlideshow);
+    
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loadingSpinner').style.opacity = '0';
+            setTimeout(() => { document.getElementById('loadingSpinner').style.display = 'none'; }, 500);
+        }, 500);
+    });
+    
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+    });
+    
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileBtn.addEventListener('click', () => { navLinks.classList.toggle('mobile-nav-active'); });
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === "#" || href === "") return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+                if (navLinks.classList.contains('mobile-nav-active')) navLinks.classList.remove('mobile-nav-active');
+            }
+        });
+    });
+    
+    const contactForm = document.getElementById('contactForm');
+    if(contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('formSuccess').style.display = 'block';
+            contactForm.reset();
+            setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+        });
+    }
+    
+    // Schema for SEO
+    const scriptSchema = document.createElement('script');
+    scriptSchema.type = 'application/ld+json';
+    scriptSchema.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "HardwareStore",
+        "name": "Lahoti Plywood Center",
+        "description": "Premium plywood, laminates, veneers, MDF and timber supplier since 1975. Quality guaranteed, instant delivery.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Nagpur", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "458" },
+        "priceRange": "₹₹",
+        "telephone": "+919876543210"
+    });
+    document.head.appendChild(scriptSchema);
+</script>
+</body>
+</html>
