@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Lahoti Plywood Center | Premium Plywood, Laminates & Timber Since 1975 | Best Quality</title>
-    <meta name="description" content="Lahoti Plywood Center - Leading supplier of premium plywood, decorative laminates, veneers, MDF, and timber. 45+ years of trust. Quality guaranteed, instant delivery. Best rates in city.">
-    <meta name="keywords" content="Lahoti Plywood Center, plywood, laminates, timber, veneer, MDF, wooden flooring, building materials, best plywood dealer">
+    <title>Lahoti Plywood Center | Premium Plywood, Laminates & Timber Since 1975 | Ahmedabad</title>
+    <meta name="description" content="Lahoti Plywood Center - Ahmedabad's favourite destination for premium plywood, decorative laminates, veneers, MDF & timber. 50+ years of trust, unbeatable quality & same-day delivery.">
+    <meta name="keywords" content="Lahoti Plywood Center, plywood Ahmedabad, laminates, timber, veneer, MDF, wooden flooring, building materials, best plywood dealer Ahmedabad, Gujarat">
     <meta name="author" content="Lahoti Plywood Center">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.lahotiplywood.com">
     
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Lahoti Plywood Center | Premium Plywood & Laminates | 45+ Years Trust">
-    <meta property="og:description" content="India's most trusted plywood destination. Premium laminates, plywood, veneers & timber. Quality assured since 1975.">
+    <meta property="og:title" content="Lahoti Plywood Center | Premium Plywood & Laminates | 50+ Years Trust">
+    <meta property="og:description" content="Ahmedabad's most trusted plywood destination. Premium laminates, plywood, veneers & timber. Crafting beautiful spaces since 1975.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.lahotiplywood.com">
     
@@ -670,6 +670,185 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
         }
+
+        /* Visitor Counter */
+        .visitor-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(44, 36, 24, 0.92);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(232, 196, 107, 0.5);
+            border-radius: 50px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 99;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .visitor-counter i {
+            color: #e8c46b;
+            font-size: 1.2rem;
+        }
+
+        .visitor-counter .counter-text {
+            color: #f5e6c8;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .visitor-counter .counter-number {
+            color: #e8c46b;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        /* Animated Architect Welcome */
+        .architect-welcome {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            z-index: 98;
+            display: flex;
+            align-items: flex-end;
+            gap: 12px;
+            animation: architectSlideIn 1s ease-out 2s forwards;
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+
+        @keyframes architectSlideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .architect-character {
+            width: 70px;
+            height: 70px;
+            position: relative;
+            animation: architectBounce 3s ease-in-out infinite;
+        }
+
+        @keyframes architectBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .architect-body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        /* Architect SVG Animation */
+        .architect-body svg {
+            width: 70px;
+            height: 70px;
+        }
+
+        .architect-hand {
+            animation: wave 1.5s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-5deg); }
+        }
+
+        .architect-bubble {
+            background: white;
+            border-radius: 20px;
+            padding: 12px 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border: 2px solid rgba(232, 196, 107, 0.4);
+            position: relative;
+            max-width: 200px;
+            animation: bubblePop 0.5s ease-out 2.5s forwards;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        @keyframes bubblePop {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .architect-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: 15px;
+            left: -10px;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent white transparent transparent;
+        }
+
+        .architect-bubble p {
+            font-size: 0.8rem;
+            color: #2c2418;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .architect-bubble .close-bubble {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 22px;
+            height: 22px;
+            background: #c49a2a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .architect-bubble .close-bubble:hover {
+            background: #2c2418;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 800px) {
+            .architect-welcome {
+                bottom: 80px;
+                left: 10px;
+            }
+            .architect-character {
+                width: 50px;
+                height: 50px;
+            }
+            .architect-body svg {
+                width: 50px;
+                height: 50px;
+            }
+            .architect-bubble {
+                max-width: 150px;
+                padding: 10px 14px;
+            }
+            .architect-bubble p {
+                font-size: 0.7rem;
+            }
+            .visitor-counter {
+                left: 10px;
+                bottom: 20px;
+                padding: 8px 16px;
+            }
+        }
         
         /* Responsive */
         @media (max-width: 800px) {
@@ -775,7 +954,7 @@
     <div class="nav-container">
         <div class="logo" data-aos="fade-right">
             <h1>Lahoti Plywood Center</h1>
-            <span>EST. 1975 | TRUST • QUALITY • EXCELLENCE</span>
+            <span>EST. 1975 | TRUST • QUALITY • CRAFTSMANSHIP</span>
         </div>
         <div class="nav-links" id="navLinks">
             <a href="#home" class="active">Home</a>
@@ -783,6 +962,7 @@
             <a href="#laminates">Laminates</a>
             <a href="#why-us">Why Us</a>
             <a href="#testimonials">Testimonials</a>
+            <a href="#directions">Find Us</a>
             <a href="#contact" class="btn-outline">Get Quote</a>
         </div>
         <div class="mobile-menu" id="mobileMenuBtn">
@@ -796,11 +976,11 @@
     <section id="home" class="hero">
         <!-- Slideshow Background -->
         <div class="slideshow-container" id="slideshowContainer">
-            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=1600');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1616486338812-3badae6b9c6b?w=1600');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1605618323934-d4c1c6c9b9b8?w=1600');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600');"></div>
-            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=1600');"></div>
+            <div class="slide active" style="background-image: url('images/slide-1.jpg');"></div>
+            <div class="slide" style="background-image: url('images/slide-2.jpg');"></div>
+            <div class="slide" style="background-image: url('images/slide-3.jpg');"></div>
+            <div class="slide" style="background-image: url('images/slide-4.jpg');"></div>
+            <div class="slide" style="background-image: url('images/slide-5.jpg');"></div>
         </div>
         
         <!-- Dark Overlay for better text visibility -->
@@ -811,10 +991,10 @@
             <div class="container hero-grid">
                 <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
                     <div class="hero-badge">
-                        <i class="fas fa-trophy"></i> 45+ Years of Trust & Excellence
+                        <i class="fas fa-trophy"></i> 50+ Years of Trust & Craftsmanship
                     </div>
-                    <h1>Premium Quality<br>Plywood & Laminates</h1>
-                    <p>Lahoti Plywood Center — Where strength meets elegance. India's most trusted destination for premium plywood, decorative laminates, veneers, and timber since 1975.</p>
+                    <h1>Crafting Spaces<br>That Inspire</h1>
+                    <p>Lahoti Plywood Center — Where strength meets elegance. Ahmedabad's most loved destination for premium plywood, designer laminates, exotic veneers & finest timber since 1975.</p>
                     <a href="#contact" class="btn-primary">
                         <i class="fas fa-gem"></i> Explore Our Range
                         <i class="fas fa-arrow-right"></i>
@@ -822,7 +1002,7 @@
                 </div>
                 <div class="hero-stats" data-aos="fade-left" data-aos-delay="200">
                     <div class="stat-card">
-                        <div class="stat-number">45+</div>
+                        <div class="stat-number">50+</div>
                         <div class="stat-label">Years of Legacy</div>
                         <div class="stat-icon"><i class="fas fa-tree"></i></div>
                     </div>
@@ -853,25 +1033,25 @@
     <!-- Premium Laminates Showcase Section -->
     <section id="laminates">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Premium Laminates Collection</h2>
-            <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Exquisite designs, textures & finishes to transform your spaces</p>
+            <h2 class="section-title" data-aos="fade-up">Discover Our Laminate Studio</h2>
+            <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Handpicked designs, rich textures & stunning finishes — curated to bring your vision to life</p>
             
             <div class="laminate-showcase">
                 <div class="laminate-grid">
                     <div class="laminate-card" data-aos="zoom-in" data-aos-delay="0">
-                        <div class="laminate-img"><i class="fas fa-border-all fa-4x"></i></div>
+                        <div class="laminate-img" style="background: url('images/textured-laminate.jpg') center/cover no-repeat;"></div>
                         <div class="laminate-info"><h4>Textured Laminates</h4><p>Linen, canvas, fine grain & leather finish</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
                     </div>
                     <div class="laminate-card" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="laminate-img"><i class="fas fa-gem fa-4x"></i></div>
+                        <div class="laminate-img" style="background: url('images/glossy-matte-laminate.jpg') center/cover no-repeat;"></div>
                         <div class="laminate-info"><h4>Glossy & Matte Finish</h4><p>High gloss, ultra matt & soft touch laminates</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
                     </div>
                     <div class="laminate-card" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="laminate-img"><i class="fas fa-leaf fa-4x"></i></div>
+                        <div class="laminate-img" style="background: url('images/wooden-finish-laminate.jpg') center/cover no-repeat;"></div>
                         <div class="laminate-info"><h4>Wooden Finish</h4><p>Natural oak, walnut, teak, mahogany veneers</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
                     </div>
                     <div class="laminate-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="laminate-img"><i class="fas fa-palette fa-4x"></i></div>
+                        <div class="laminate-img" style="background: url('images/abstract-designer-laminate.jpg') center/cover no-repeat;"></div>
                         <div class="laminate-info"><h4>Abstract & Designer</h4><p>Marble, stone, concrete & artistic patterns</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
                     </div>
                 </div>
@@ -882,15 +1062,17 @@
     <!-- Product Range Section -->
     <section id="products">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Our Complete Product Range</h2>
-            <p class="section-sub" data-aos="fade-up" data-aos-delay="100">One stop solution for all your wood & decorative needs</p>
+            <h2 class="section-title" data-aos="fade-up">Everything You Need, Under One Roof</h2>
+            <p class="section-sub" data-aos="fade-up" data-aos-delay="100">From raw timber to designer finishes — your complete wood & interior solutions partner</p>
             <div class="product-grid">
                 <div class="product-cat" data-aos="zoom-in"><div class="product-icon"><i class="fas fa-layer-group"></i></div><h3>Laminates</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Textured Laminates</li><li><i class="fas fa-check-circle"></i> Glossy & Matte Finish</li><li><i class="fas fa-check-circle"></i> Acrylic & PVC Laminates</li><li><i class="fas fa-check-circle"></i> Digital Printing Series</li></ul></div>
                 <div class="product-cat" data-aos="zoom-in" data-aos-delay="50"><div class="product-icon"><i class="fas fa-border-all"></i></div><h3>Plywood</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Commercial Plywood</li><li><i class="fas fa-check-circle"></i> BWR & BWP Grade</li><li><i class="fas fa-check-circle"></i> Pre-laminated Plywood</li><li><i class="fas fa-check-circle"></i> Calibrated Plywood</li></ul></div>
-                <div class="product-cat" data-aos="zoom-in" data-aos-delay="100"><div class="product-icon"><i class="fas fa-venus-mars"></i></div><h3>Veneer</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Natural Veneers</li><li><i class="fas fa-check-circle"></i> Dyed & Smoke Veneers</li><li><i class="fas fa-check-circle"></i> Stone Veneers</li><li><i class="fas fa-check-circle"></i> Designer Veneers</li></ul></div>
+                <div class="product-cat" data-aos="zoom-in" data-aos-delay="100"><div class="product-icon"><i class="fas fa-stream"></i></div><h3>Veneer</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Natural Veneers</li><li><i class="fas fa-check-circle"></i> Dyed & Smoke Veneers</li><li><i class="fas fa-check-circle"></i> Stone Veneers</li><li><i class="fas fa-check-circle"></i> Designer Veneers</li></ul></div>
                 <div class="product-cat" data-aos="zoom-in" data-aos-delay="150"><div class="product-icon"><i class="fas fa-cubes"></i></div><h3>MDF & Boards</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Plain & Waterproof MDF</li><li><i class="fas fa-check-circle"></i> HDHMR & Fluted MDF</li><li><i class="fas fa-check-circle"></i> WPC & PVC Sheets</li><li><i class="fas fa-check-circle"></i> Cement & OSB Boards</li></ul></div>
                 <div class="product-cat" data-aos="zoom-in" data-aos-delay="200"><div class="product-icon"><i class="fas fa-tree"></i></div><h3>Timber</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Teak Wood (Burma/Ghana)</li><li><i class="fas fa-check-circle"></i> Oak, Ash & Pine Wood</li><li><i class="fas fa-check-circle"></i> IPE & Live Edge Wood</li><li><i class="fas fa-check-circle"></i> Thermopine Wood</li></ul></div>
                 <div class="product-cat" data-aos="zoom-in" data-aos-delay="250"><div class="product-icon"><i class="fas fa-border-all"></i></div><h3>Wooden Flooring</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Vinyl Flooring</li><li><i class="fas fa-check-circle"></i> Laminated Flooring</li><li><i class="fas fa-check-circle"></i> SPC Flooring</li><li><i class="fas fa-check-circle"></i> Herringbone Design</li></ul></div>
+                <div class="product-cat" data-aos="zoom-in" data-aos-delay="300"><div class="product-icon"><i class="fas fa-fill-drip"></i></div><h3>Fevicol & Adhesives</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Fevicol SH (Woodworking)</li><li><i class="fas fa-check-circle"></i> Fevicol Marine</li><li><i class="fas fa-check-circle"></i> Fevicol Heatproof</li><li><i class="fas fa-check-circle"></i> Fevicol SpeedX & SR998</li></ul></div>
+                <div class="product-cat" data-aos="zoom-in" data-aos-delay="350"><div class="product-icon"><i class="fas fa-cogs"></i></div><h3>Furniture Fittings</h3><ul class="product-list"><li><i class="fas fa-check-circle"></i> Hinges & Drawer Slides</li><li><i class="fas fa-check-circle"></i> Cabinet Handles & Knobs</li><li><i class="fas fa-check-circle"></i> Soft-Close Mechanisms</li><li><i class="fas fa-check-circle"></i> Edge Bands & Profiles</li></ul></div>
             </div>
         </div>
     </section>
@@ -901,9 +1083,9 @@
             <div class="grid-2col">
                 <div data-aos="fade-right">
                     <h2 class="section-title" style="text-align: left;">What We Do?</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Lahoti Plywood Center is one of the most trusted names in the timber industry, serving with excellence since 1975. We specialize in premium plywood, decorative laminates, veneers, MDF, and timber products for interior & exterior spaces.</p>
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">For over five decades, Lahoti Plywood Center has been Ahmedabad's trusted partner in building beautiful spaces. We bring you hand-selected plywood, designer laminates, exotic veneers, MDF & premium timber — everything you need to turn your interior dreams into reality.</p>
                     <h3>Our Work Philosophy</h3>
-                    <p>We deliver quality materials at competitive prices with hassle-free service. Our customer-centric approach and commitment to timely delivery set us apart.</p>
+                    <p>Quality materials, honest pricing, and service that puts you first — that's the Lahoti promise. We believe every project deserves the best, delivered on time, every time.</p>
                 </div>
                 <div data-aos="fade-left">
                     <h2 class="section-title" style="text-align: left;">Why Choose Us?</h2>
@@ -921,8 +1103,8 @@
     <!-- Testimonials -->
     <section id="testimonials">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
-            <p class="section-sub" data-aos="fade-up">Trusted by generations — real stories from our valued customers</p>
+            <h2 class="section-title" data-aos="fade-up">Voices of Trust</h2>
+            <p class="section-sub" data-aos="fade-up">Generations of happy customers — hear their stories in their own words</p>
             <div class="testimonial-slider" id="testimonialSlider">
                 <div class="testimonial-card"><div class="testimonial-text"><i class="fas fa-quote-left"></i> Excellent quality plywood and laminates. Lahoti Plywood Center has been our go-to supplier for 15+ years. Best rates and honest advice.</div><div class="client-name">— Rajesh Mehta, Architect</div><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
                 <div class="testimonial-card"><div class="testimonial-text"><i class="fas fa-quote-left"></i> The laminate collection is amazing! They helped me choose the perfect finish for my home. Delivery was prompt and service was outstanding.</div><div class="client-name">— Priya Sharma, Homeowner</div><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
@@ -934,8 +1116,8 @@
     <!-- CTA -->
     <div class="container cta-wrapper" data-aos="zoom-in-up">
         <div class="cta-content">
-            <h3 style="font-size: 2.2rem; margin-bottom: 15px; color: #e8c46b;">Visit Our Experience Center</h3>
-            <p style="margin-bottom: 25px; color: #d4b88c; font-size: 1.1rem;">Explore 500+ laminate designs & plywood varieties. Get expert guidance for your dream project.</p>
+            <h3 style="font-size: 2.2rem; margin-bottom: 15px; color: #e8c46b;">Step Into Our Experience Center</h3>
+            <p style="margin-bottom: 25px; color: #d4b88c; font-size: 1.1rem;">Touch, feel & compare 500+ laminate designs & plywood varieties. Let our experts guide you to the perfect pick for your dream project.</p>
             <a href="#contact" class="btn-primary" style="background: #e8c46b; color:#2c2418;"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
         </div>
     </div>
@@ -943,33 +1125,113 @@
     <!-- Contact Section -->
     <section id="contact" style="background: rgba(232, 196, 107, 0.08); border-radius: 60px; margin: 20px;">
         <div class="container" style="max-width: 800px;">
-            <h2 class="section-title" data-aos="fade-up">Get Instant Quote</h2>
-            <p class="section-sub" data-aos="fade-up">Share your requirements — we'll respond within 2 hours with best pricing</p>
+            <h2 class="section-title" data-aos="fade-up">Let's Talk About Your Project</h2>
+            <p class="section-sub" data-aos="fade-up">Share your requirements and we'll get back to you within 2 hours with the best pricing — no obligation, just honest advice</p>
             <form id="contactForm" data-aos="fade-up" style="display: flex; flex-direction: column; gap: 20px;">
-                <input type="text" placeholder="Full Name *" required style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
-                <input type="tel" placeholder="Phone Number *" required style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
-                <input type="email" placeholder="Email ID" style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
-                <select style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
-                    <option>Select product category</option><option>Laminates</option><option>Plywood</option><option>Timber</option><option>Veneer/MDF</option><option>Flooring</option>
+                <input type="text" name="user_name" id="userName" placeholder="Full Name *" required style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
+                <input type="tel" name="user_phone" id="userPhone" placeholder="Phone Number *" required style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
+                <input type="email" name="user_email" id="userEmail" placeholder="Email ID" style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
+                <select name="product_category" id="productCategory" style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
+                    <option>Select product category</option><option>Laminates</option><option>Plywood</option><option>Timber</option><option>Veneer/MDF</option><option>Flooring</option><option>Fevicol & Adhesives</option><option>Furniture Fittings & Accessories</option>
                 </select>
-                <textarea rows="3" placeholder="Tell us your requirements (quantity, size, design preference)..." style="padding: 15px; border-radius: 25px; border: 2px solid #d4b88c; background: white;"></textarea>
-                <button type="submit" class="btn-primary" style="border: none; justify-content: center; background: #c49a2a; color:#2c2418;"><i class="fas fa-paper-plane"></i> Send Enquiry</button>
+                <textarea rows="3" name="message" id="userMessage" placeholder="Tell us your requirements (quantity, size, design preference)..." style="padding: 15px; border-radius: 25px; border: 2px solid #d4b88c; background: white;"></textarea>
+                <button type="submit" id="submitBtn" class="btn-primary" style="border: none; justify-content: center; background: #c49a2a; color:#2c2418;"><i class="fas fa-paper-plane"></i> Send Enquiry</button>
             </form>
-            <div id="formSuccess" style="margin-top: 20px; text-align: center; color: #c49a2a; display: none; font-weight: 700;">✅ Thank you! Our team will contact you shortly.</div>
+            <div id="formSuccess" style="margin-top: 20px; text-align: center; color: #c49a2a; display: none; font-weight: 700;">✅ Thank you! Redirecting you to WhatsApp...</div>
         </div>
     </section>
+    <!-- Directions Section with Google Map -->
+    <section id="directions" style="padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Find Your Way to Us</h2>
+            <p class="section-sub" data-aos="fade-up">We're conveniently located on Jagannathji Road, Ahmedabad. Drop by anytime — we'd love to help you pick the perfect materials for your project.</p>
+            <div data-aos="fade-up" style="border-radius: 30px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); border: 2px solid rgba(200,168,107,0.3);">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.902!2d72.5714!3d23.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLahoti+Plywood+Center!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                    width="100%" 
+                    height="400" 
+                    style="border:0; display:block;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Lahoti Plywood Center Location - 11, Jagannathji Road, Ahmedabad, Gujarat">
+                </iframe>
+            </div>
+            <div style="text-align: center; margin-top: 30px;" data-aos="fade-up">
+                <a href="https://www.google.com/maps/dir//Lahoti+Plywood+Center,+11,+Jagannathji+Road,+Ahmedabad,+Gujarat" target="_blank" class="btn-primary" style="display: inline-flex;">
+                    <i class="fas fa-directions"></i> Get Directions on Google Maps
+                    <i class="fas fa-external-link-alt"></i>
+                </a>
+                <p style="margin-top: 15px; color: #5a4a34; font-size: 0.95rem;"><i class="fas fa-map-marker-alt" style="color:#c49a2a;"></i> 11, Jagannathji Road, Ahmedabad, Gujarat | <i class="fas fa-phone-alt" style="color:#c49a2a;"></i> +91 93761 72228</p>
+            </div>
+        </div>
+    </section>
+
 </main>
 
 <footer>
     <div class="container footer-grid">
-        <div><h3 style="font-size: 1.8rem; margin-bottom: 10px; color: #e8c46b;">Lahoti Plywood Center</h3><p>Since 1975 — Strength, Trust & Precision</p><p><i class="fas fa-map-marker-alt"></i> Main Timber Market, Nagpur & Pune</p><p><i class="fas fa-phone-alt"></i> +91 98765 43210</p><div class="social-icons" style="margin-top: 20px;"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
-        <div><h4>Quick Links</h4><p><a href="#products" style="color:#d4b88c; text-decoration: none;">Products</a></p><p><a href="#laminates" style="color:#d4b88c; text-decoration: none;">Laminates</a></p><p><a href="#why-us" style="color:#d4b88c; text-decoration: none;">About Us</a></p><p>Experience Center</p></div>
-        <div><h4>Business Hours</h4><p>Mon-Sat: 9:30 AM - 8:00 PM</p><p>Sunday: 10:00 AM - 2:00 PM</p><div style="margin-top: 15px;"><i class="fab fa-whatsapp"></i> +91 98765 43210 (WhatsApp)</div></div>
+        <div><h3 style="font-size: 1.8rem; margin-bottom: 10px; color: #e8c46b;">Lahoti Plywood Center</h3><p>Since 1975 — Strength, Trust & Craftsmanship</p><p><i class="fas fa-map-marker-alt"></i> 11, Jagannathji Road, Ahmedabad, Gujarat</p><p><i class="fas fa-phone-alt"></i> +91 93761 72228</p><div class="social-icons" style="margin-top: 20px;"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-linkedin"></i></a></div></div>
+        <div><h4>Quick Links</h4><p><a href="#products" style="color:#d4b88c; text-decoration: none;">Products</a></p><p><a href="#laminates" style="color:#d4b88c; text-decoration: none;">Laminates</a></p><p><a href="#why-us" style="color:#d4b88c; text-decoration: none;">About Us</a></p><p><a href="#directions" style="color:#d4b88c; text-decoration: none;">Find Us</a></p></div>
+        <div><h4>Business Hours</h4><p>Mon-Sat: 9:30 AM - 8:00 PM</p><p>Sunday: 10:00 AM - 2:00 PM</p><div style="margin-top: 15px;"><i class="fab fa-whatsapp"></i> +91 93761 72228 (WhatsApp)</div></div>
     </div>
-    <div class="container" style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid #3a2e20; font-size: 0.8rem;">© 2025 Lahoti Plywood Center – Premium Wood Solutions. All Rights Reserved. | SEO Optimized Website</div>
+    <div class="container" style="text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid #3a2e20; font-size: 0.8rem;">© 2025 Lahoti Plywood Center – Crafting Beautiful Spaces Since 1975. All Rights Reserved.</div>
 </footer>
 
-<a href="https://wa.me/919876543210?text=Hello%20Lahoti%20Plywood%20Center%2C%20I%20need%20a%20quote%20for%20plywood%20and%20laminates" class="whatsapp-float" target="_blank">
+<!-- Visitor Counter -->
+<div class="visitor-counter">
+    <i class="fas fa-eye"></i>
+    <div>
+        <div class="counter-text">Visitors</div>
+        <div class="counter-number" id="visitorCount">0</div>
+    </div>
+</div>
+
+<!-- Animated Architect Welcome -->
+<div class="architect-welcome" id="architectWelcome">
+    <div class="architect-character">
+        <div class="architect-body">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Hard Hat -->
+                <ellipse cx="50" cy="22" rx="22" ry="14" fill="#e8c46b"/>
+                <rect x="30" y="20" width="40" height="6" rx="3" fill="#c49a2a"/>
+                <!-- Face -->
+                <circle cx="50" cy="38" r="14" fill="#f5d6a8"/>
+                <!-- Eyes -->
+                <circle cx="44" cy="36" r="2.5" fill="#2c2418"/>
+                <circle cx="56" cy="36" r="2.5" fill="#2c2418"/>
+                <!-- Smile -->
+                <path d="M44 43 Q50 48 56 43" stroke="#2c2418" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <!-- Body -->
+                <rect x="38" y="52" width="24" height="30" rx="8" fill="#4a90d9"/>
+                <!-- Tie -->
+                <polygon points="50,52 47,60 50,62 53,60" fill="#c49a2a"/>
+                <!-- Left arm -->
+                <rect x="28" y="55" width="10" height="6" rx="3" fill="#4a90d9"/>
+                <!-- Right arm (waving) -->
+                <g class="architect-hand">
+                    <rect x="62" y="50" width="10" height="6" rx="3" fill="#4a90d9" transform="rotate(-30 67 53)"/>
+                    <!-- Hand -->
+                    <circle cx="73" cy="47" r="5" fill="#f5d6a8"/>
+                </g>
+                <!-- Blueprint roll in left hand -->
+                <rect x="22" y="56" width="8" height="4" rx="2" fill="#ffffff" stroke="#4a90d9" stroke-width="1"/>
+                <!-- Legs -->
+                <rect x="40" y="80" width="8" height="14" rx="3" fill="#2c2418"/>
+                <rect x="52" y="80" width="8" height="14" rx="3" fill="#2c2418"/>
+                <!-- Shoes -->
+                <ellipse cx="44" cy="95" rx="6" ry="4" fill="#1a1008"/>
+                <ellipse cx="56" cy="95" rx="6" ry="4" fill="#1a1008"/>
+            </svg>
+        </div>
+    </div>
+    <div class="architect-bubble">
+        <button class="close-bubble" onclick="document.getElementById('architectWelcome').style.display='none'">✕</button>
+        <p>👋 Welcome! I'm here to help you build your dream space. Explore our collection!</p>
+    </div>
+</div>
+
+<a href="https://wa.me/919376172228?text=Hello%20Lahoti%20Plywood%20Center%2C%20I%20need%20a%20quote%20for%20plywood%20and%20laminates" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp fa-lg"></i> Need help? Chat
 </a>
 
@@ -1057,9 +1319,32 @@
     if(contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
+            const name = document.getElementById('userName').value.trim();
+            const phone = document.getElementById('userPhone').value.trim();
+            const email = document.getElementById('userEmail').value.trim();
+            const category = document.getElementById('productCategory').value;
+            const message = document.getElementById('userMessage').value.trim();
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Build WhatsApp message
+            const whatsappMsg = `Hello Lahoti Plywood Center!%0A%0A` +
+                `*New Enquiry*%0A` +
+                `Name: ${encodeURIComponent(name)}%0A` +
+                `Phone: ${encodeURIComponent(phone)}%0A` +
+                `Email: ${encodeURIComponent(email || 'N/A')}%0A` +
+                `Product: ${encodeURIComponent(category)}%0A` +
+                `Requirements: ${encodeURIComponent(message || 'N/A')}`;
+
+            // Show success and open WhatsApp
             document.getElementById('formSuccess').style.display = 'block';
             contactForm.reset();
-            setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 4000);
+
+            setTimeout(() => {
+                window.open('https://wa.me/919376172228?text=' + whatsappMsg, '_blank');
+            }, 800);
+
+            setTimeout(() => { document.getElementById('formSuccess').style.display = 'none'; }, 6000);
         });
     }
     
@@ -1071,12 +1356,58 @@
         "@type": "HardwareStore",
         "name": "Lahoti Plywood Center",
         "description": "Premium plywood, laminates, veneers, MDF and timber supplier since 1975. Quality guaranteed, instant delivery.",
-        "address": { "@type": "PostalAddress", "addressLocality": "Nagpur", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+        "address": { "@type": "PostalAddress", "streetAddress": "11, Jagannathji Road", "addressLocality": "Ahmedabad", "addressRegion": "Gujarat", "addressCountry": "IN" },
         "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "458" },
         "priceRange": "₹₹",
-        "telephone": "+919876543210"
+        "telephone": "+919376172228"
     });
     document.head.appendChild(scriptSchema);
+
+    // Dynamic Visitor Counter using CountAPI (real-time, server-based)
+    (function() {
+        const counterEl = document.getElementById('visitorCount');
+        const namespace = 'lahotiplywoodcenter';
+        const key = 'website-visits';
+
+        // Use CountAPI for a real dynamic counter
+        fetch('https://api.countapi.xyz/hit/' + namespace + '/' + key)
+            .then(response => response.json())
+            .then(data => {
+                const target = data.value;
+                // Animate the number counting up
+                let current = 0;
+                const increment = Math.ceil(target / 60);
+                const counterAnimation = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(counterAnimation);
+                    }
+                    counterEl.textContent = current.toLocaleString();
+                }, 30);
+            })
+            .catch(() => {
+                // Fallback: use localStorage if API is unavailable
+                let count = parseInt(localStorage.getItem('lahotVisitorCount') || '0');
+                const visited = sessionStorage.getItem('lahotVisited');
+                if (!visited) {
+                    count++;
+                    localStorage.setItem('lahotVisitorCount', count);
+                    sessionStorage.setItem('lahotVisited', 'true');
+                }
+                counterEl.textContent = count.toLocaleString();
+            });
+    })();
+
+    // Auto-hide architect after 8 seconds
+    setTimeout(() => {
+        const architect = document.getElementById('architectWelcome');
+        if (architect) {
+            architect.style.transition = 'opacity 0.5s ease';
+            architect.style.opacity = '0';
+            setTimeout(() => { architect.style.display = 'none'; }, 500);
+        }
+    }, 10000);
 </script>
 </body>
 </html>
