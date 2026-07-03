@@ -86,7 +86,7 @@
         }
         
         .logo h1 {
-            font-size: 1.9rem;
+            font-size: 2.8rem;
             font-weight: 800;
             background: linear-gradient(135deg, #e8c46b 0%, #c49a2a 100%);
             -webkit-background-clip: text;
@@ -243,7 +243,7 @@
         }
         
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: 3.2rem;
             line-height: 1.15;
             font-weight: 800;
             color: #ffffff;
@@ -647,6 +647,34 @@
             color: #f0d48a;
         }
         
+        /* Multi-Select Dropdown */
+        .dropdown-options.show {
+            display: block !important;
+        }
+
+        .dropdown-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #2c2418;
+            border-radius: 10px;
+            transition: background 0.2s;
+        }
+
+        .dropdown-checkbox:hover {
+            background: #faf6f0;
+        }
+
+        .dropdown-checkbox input[type="checkbox"] {
+            accent-color: #c49a2a;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
         /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed;
@@ -678,65 +706,82 @@
             left: 30px;
             background: rgba(44, 36, 24, 0.92);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(232, 196, 107, 0.5);
-            border-radius: 50px;
-            padding: 12px 24px;
+            border: 1px solid rgba(232, 196, 107, 0.4);
+            border-radius: 40px;
+            padding: 8px 16px;
             display: flex;
             align-items: center;
             gap: 10px;
             z-index: 99;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
         .visitor-counter i {
             color: #e8c46b;
-            font-size: 1.2rem;
-        }
-
-        .visitor-counter .counter-text {
-            color: #f5e6c8;
             font-size: 0.85rem;
-            font-weight: 600;
         }
 
         .visitor-counter .counter-number {
-            color: #e8c46b;
-            font-size: 1.1rem;
-            font-weight: 800;
+            color: #f5e6c8;
+            font-size: 0.85rem;
+            font-weight: 700;
             letter-spacing: 1px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .visitor-counter .counter-dot {
+            width: 6px;
+            height: 6px;
+            background: #25D366;
+            border-radius: 50%;
+            animation: livePulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
         }
 
         /* Animated Architect Welcome */
         .architect-welcome {
             position: fixed;
-            bottom: 100px;
-            left: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 98;
             display: flex;
-            align-items: flex-end;
+            flex-direction: column;
+            align-items: center;
             gap: 12px;
-            animation: architectSlideIn 1s ease-out 2s forwards;
+            animation: architectFadeIn 0.8s ease-out 2s forwards;
             opacity: 0;
-            transform: translateX(-100px);
+            pointer-events: none;
+            transition: all 0.5s ease;
         }
 
-        @keyframes architectSlideIn {
+        .architect-welcome.scrolled {
+            top: 50%;
+            left: 40px;
+            transform: translate(0, -50%) scale(0.6);
+            opacity: 0.7;
+        }
+
+        @keyframes architectFadeIn {
             to {
                 opacity: 1;
-                transform: translateX(0);
             }
         }
 
         .architect-character {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             position: relative;
-            animation: architectBounce 3s ease-in-out infinite;
+            animation: architectFloat 3s ease-in-out infinite;
         }
 
-        @keyframes architectBounce {
+        @keyframes architectFloat {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-8px); }
         }
 
         .architect-body {
@@ -747,8 +792,8 @@
 
         /* Architect SVG Animation */
         .architect-body svg {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
         }
 
         .architect-hand {
@@ -769,10 +814,12 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.12);
             border: 2px solid rgba(232, 196, 107, 0.4);
             position: relative;
-            max-width: 200px;
+            max-width: 220px;
+            text-align: center;
             animation: bubblePop 0.5s ease-out 2.5s forwards;
             opacity: 0;
             transform: scale(0.8);
+            pointer-events: auto;
         }
 
         @keyframes bubblePop {
@@ -782,14 +829,15 @@
             }
         }
 
-        .architect-bubble::before {
+        .architect-bubble::after {
             content: '';
             position: absolute;
-            bottom: 15px;
-            left: -10px;
-            border-width: 8px;
+            top: -10px;
+            left: 50%;
+            margin-left: -8px;
+            border-width: 0 8px 10px 8px;
             border-style: solid;
-            border-color: transparent white transparent transparent;
+            border-color: transparent transparent white transparent;
         }
 
         .architect-bubble p {
@@ -816,6 +864,7 @@
             cursor: pointer;
             border: none;
             transition: 0.3s;
+            pointer-events: auto;
         }
 
         .architect-bubble .close-bubble:hover {
@@ -824,20 +873,20 @@
         }
 
         @media (max-width: 800px) {
-            .architect-welcome {
-                bottom: 80px;
+            .architect-welcome.scrolled {
                 left: 10px;
+                transform: translate(0, -50%) scale(0.5);
             }
             .architect-character {
-                width: 50px;
-                height: 50px;
+                width: 60px;
+                height: 60px;
             }
             .architect-body svg {
-                width: 50px;
-                height: 50px;
+                width: 60px;
+                height: 60px;
             }
             .architect-bubble {
-                max-width: 150px;
+                max-width: 170px;
                 padding: 10px 14px;
             }
             .architect-bubble p {
@@ -976,11 +1025,11 @@
     <section id="home" class="hero">
         <!-- Slideshow Background -->
         <div class="slideshow-container" id="slideshowContainer">
-            <div class="slide active" style="background-image: url('images/slide-1.jpg');"></div>
-            <div class="slide" style="background-image: url('images/slide-2.jpg');"></div>
-            <div class="slide" style="background-image: url('images/slide-3.jpg');"></div>
-            <div class="slide" style="background-image: url('images/slide-4.jpg');"></div>
-            <div class="slide" style="background-image: url('images/slide-5.jpg');"></div>
+            <div class="slide active" style="background-image: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+            <div class="slide" style="background-image: url('https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+            <div class="slide" style="background-image: url('https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+            <div class="slide" style="background-image: url('https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+            <div class="slide" style="background-image: url('https://images.pexels.com/photos/3935333/pexels-photo-3935333.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
         </div>
         
         <!-- Dark Overlay for better text visibility -->
@@ -1007,7 +1056,7 @@
                         <div class="stat-icon"><i class="fas fa-tree"></i></div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">15K+</div>
+                        <div class="stat-number">15000+</div>
                         <div class="stat-label">Happy Clients</div>
                         <div class="stat-icon"><i class="fas fa-smile"></i></div>
                     </div>
@@ -1039,20 +1088,20 @@
             <div class="laminate-showcase">
                 <div class="laminate-grid">
                     <div class="laminate-card" data-aos="zoom-in" data-aos-delay="0">
-                        <div class="laminate-img" style="background: url('images/textured-laminate.jpg') center/cover no-repeat;"></div>
+                        <div class="laminate-img" style="background: url('https://images.pexels.com/photos/2824173/pexels-photo-2824173.jpeg?auto=compress&cs=tinysrgb&w=600') center/cover no-repeat;"></div>
                         <div class="laminate-info"><h4>Textured Laminates</h4><p>Linen, canvas, fine grain & leather finish</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
                     </div>
                     <div class="laminate-card" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="laminate-img" style="background: url('images/glossy-matte-laminate.jpg') center/cover no-repeat;"></div>
+                        <div class="laminate-img" style="background: url('https://images.pexels.com/photos/6444268/pexels-photo-6444268.jpeg?auto=compress&cs=tinysrgb&w=600') center/cover no-repeat;"></div>
                         <div class="laminate-info"><h4>Glossy & Matte Finish</h4><p>High gloss, ultra matt & soft touch laminates</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
                     </div>
                     <div class="laminate-card" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="laminate-img" style="background: url('images/wooden-finish-laminate.jpg') center/cover no-repeat;"></div>
+                        <div class="laminate-img" style="background: url('https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&w=600') center/cover no-repeat;"></div>
                         <div class="laminate-info"><h4>Wooden Finish</h4><p>Natural oak, walnut, teak, mahogany veneers</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
                     </div>
                     <div class="laminate-card" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="laminate-img" style="background: url('images/abstract-designer-laminate.jpg') center/cover no-repeat;"></div>
-                        <div class="laminate-info"><h4>Abstract & Designer</h4><p>Marble, stone, concrete & artistic patterns</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
+                        <div class="laminate-img" style="background: url('https://images.pexels.com/photos/3637837/pexels-photo-3637837.jpeg?auto=compress&cs=tinysrgb&w=600') center/cover no-repeat;"></div>
+                        <div class="laminate-info"><h4>CNC & Designer Cutting</h4><p>Precision CNC patterns, jali work & artistic 3D carvings</p><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
                     </div>
                 </div>
             </div>
@@ -1131,9 +1180,22 @@
                 <input type="text" name="user_name" id="userName" placeholder="Full Name *" required style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
                 <input type="tel" name="user_phone" id="userPhone" placeholder="Phone Number *" required style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
                 <input type="email" name="user_email" id="userEmail" placeholder="Email ID" style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
-                <select name="product_category" id="productCategory" style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white;">
-                    <option>Select product category</option><option>Laminates</option><option>Plywood</option><option>Timber</option><option>Veneer/MDF</option><option>Flooring</option><option>Fevicol & Adhesives</option><option>Furniture Fittings & Accessories</option>
-                </select>
+                <div class="multi-select-dropdown" id="productDropdown" style="position: relative;">
+                    <div id="dropdownToggle" onclick="document.getElementById('dropdownOptions').classList.toggle('show')" style="padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;">
+                        <span id="dropdownLabel" style="color: #7a6a5a; font-size: 0.95rem;">Select product categories</span>
+                        <i class="fas fa-chevron-down" style="color: #c49a2a; font-size: 0.8rem; transition: transform 0.3s;"></i>
+                    </div>
+                    <div id="dropdownOptions" class="dropdown-options" style="position: absolute; top: 100%; left: 0; right: 0; background: white; border: 2px solid #d4b88c; border-radius: 20px; margin-top: 8px; padding: 12px 16px; display: none; z-index: 50; box-shadow: 0 10px 30px rgba(0,0,0,0.12);">
+                        <label class="dropdown-checkbox"><input type="checkbox" name="product_category" value="Laminates"> Laminates</label>
+                        <label class="dropdown-checkbox"><input type="checkbox" name="product_category" value="Plywood"> Plywood</label>
+                        <label class="dropdown-checkbox"><input type="checkbox" name="product_category" value="Timber"> Timber</label>
+                        <label class="dropdown-checkbox"><input type="checkbox" name="product_category" value="Veneer/MDF"> Veneer / MDF</label>
+                        <label class="dropdown-checkbox"><input type="checkbox" name="product_category" value="Flooring"> Flooring</label>
+                        <label class="dropdown-checkbox"><input type="checkbox" name="product_category" value="Fevicol & Adhesives"> Fevicol & Adhesives</label>
+                        <label class="dropdown-checkbox"><input type="checkbox" name="product_category" value="Furniture Fittings"> Furniture Fittings</label>
+                        <label class="dropdown-checkbox"><input type="checkbox" name="product_category" value="CNC Cutting"> CNC & Designer Cutting</label>
+                    </div>
+                </div>
                 <textarea rows="3" name="message" id="userMessage" placeholder="Tell us your requirements (quantity, size, design preference)..." style="padding: 15px; border-radius: 25px; border: 2px solid #d4b88c; background: white;"></textarea>
                 <button type="submit" id="submitBtn" class="btn-primary" style="border: none; justify-content: center; background: #c49a2a; color:#2c2418;"><i class="fas fa-paper-plane"></i> Send Enquiry</button>
             </form>
@@ -1181,10 +1243,8 @@
 <!-- Visitor Counter -->
 <div class="visitor-counter">
     <i class="fas fa-eye"></i>
-    <div>
-        <div class="counter-text">Visitors</div>
-        <div class="counter-number" id="visitorCount">0</div>
-    </div>
+    <div class="counter-number" id="visitorCount">0</div>
+    <div class="counter-dot"></div>
 </div>
 
 <!-- Animated Architect Welcome -->
@@ -1315,6 +1375,32 @@
         });
     });
     
+    // Multi-select dropdown logic
+    const dropdownCheckboxes = document.querySelectorAll('#dropdownOptions input[type="checkbox"]');
+    const dropdownLabel = document.getElementById('dropdownLabel');
+
+    dropdownCheckboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+            const checked = Array.from(dropdownCheckboxes).filter(c => c.checked).map(c => c.value);
+            if (checked.length === 0) {
+                dropdownLabel.textContent = 'Select product categories';
+                dropdownLabel.style.color = '#7a6a5a';
+            } else {
+                dropdownLabel.textContent = checked.join(', ');
+                dropdownLabel.style.color = '#2c2418';
+            }
+        });
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener('click', (e) => {
+        const dropdown = document.getElementById('productDropdown');
+        const options = document.getElementById('dropdownOptions');
+        if (dropdown && !dropdown.contains(e.target)) {
+            options.classList.remove('show');
+        }
+    });
+
     const contactForm = document.getElementById('contactForm');
     if(contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -1323,9 +1409,13 @@
             const name = document.getElementById('userName').value.trim();
             const phone = document.getElementById('userPhone').value.trim();
             const email = document.getElementById('userEmail').value.trim();
-            const category = document.getElementById('productCategory').value;
             const message = document.getElementById('userMessage').value.trim();
             const submitBtn = document.getElementById('submitBtn');
+
+            // Get all checked product categories
+            const checkboxes = document.querySelectorAll('input[name="product_category"]:checked');
+            const selectedProducts = Array.from(checkboxes).map(cb => cb.value);
+            const category = selectedProducts.length > 0 ? selectedProducts.join(', ') : 'Not specified';
 
             // Build WhatsApp message
             const whatsappMsg = `Hello Lahoti Plywood Center!%0A%0A` +
@@ -1333,7 +1423,7 @@
                 `Name: ${encodeURIComponent(name)}%0A` +
                 `Phone: ${encodeURIComponent(phone)}%0A` +
                 `Email: ${encodeURIComponent(email || 'N/A')}%0A` +
-                `Product: ${encodeURIComponent(category)}%0A` +
+                `Products: ${encodeURIComponent(category)}%0A` +
                 `Requirements: ${encodeURIComponent(message || 'N/A')}`;
 
             // Show success and open WhatsApp
@@ -1399,15 +1489,33 @@
             });
     })();
 
-    // Auto-hide architect after 8 seconds
-    setTimeout(() => {
-        const architect = document.getElementById('architectWelcome');
-        if (architect) {
-            architect.style.transition = 'opacity 0.5s ease';
-            architect.style.opacity = '0';
-            setTimeout(() => { architect.style.display = 'none'; }, 500);
+    // Auto-hide architect after 10 seconds OR move to left on scroll
+    const architectEl = document.getElementById('architectWelcome');
+    let architectHidden = false;
+
+    window.addEventListener('scroll', () => {
+        if (architectEl && !architectHidden) {
+            if (window.scrollY > 100) {
+                architectEl.classList.add('scrolled');
+                // Hide bubble when scrolled to save space
+                const bubble = architectEl.querySelector('.architect-bubble');
+                if (bubble) bubble.style.display = 'none';
+            } else {
+                architectEl.classList.remove('scrolled');
+                const bubble = architectEl.querySelector('.architect-bubble');
+                if (bubble) bubble.style.display = '';
+            }
         }
-    }, 10000);
+    });
+
+    setTimeout(() => {
+        if (architectEl && !architectHidden) {
+            architectHidden = true;
+            architectEl.style.transition = 'opacity 0.5s ease';
+            architectEl.style.opacity = '0';
+            setTimeout(() => { architectEl.style.display = 'none'; }, 500);
+        }
+    }, 12000);
 </script>
 </body>
 </html>
