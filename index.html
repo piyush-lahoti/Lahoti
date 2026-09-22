@@ -1054,11 +1054,8 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Voices of Trust</h2>
             <p class="section-sub" data-aos="fade-up">Generations of happy customers  -  hear their stories in their own words</p>
-            <div class="testimonial-slider" id="testimonialSlider">
-                <div class="testimonial-card"><div class="testimonial-text"><i class="fas fa-quote-left"></i> Excellent quality plywood and laminates. Lahoti Plywood Center has been our go-to supplier for 15+ years. Best rates and honest advice.</div><div class="client-name"> -  Rajesh Mehta, Architect</div><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
-                <div class="testimonial-card"><div class="testimonial-text"><i class="fas fa-quote-left"></i> The laminate collection is amazing! They helped me choose the perfect finish for my home. Delivery was prompt and service was outstanding.</div><div class="client-name"> -  Priya Sharma, Homeowner</div><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
-                <div class="testimonial-card"><div class="testimonial-text"><i class="fas fa-quote-left"></i> Best plywood dealer in town! Even for small quantities they provide instant delivery. Highly recommended for quality and trust.</div><div class="client-name"> -  Suresh Kumar, Contractor</div><div><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i><i class="fas fa-star" style="color:#c49a2a;"></i></div></div>
-            </div>
+            <!-- Cards are randomized & rendered by JS on each page load -->
+            <div class="testimonial-slider" id="testimonialSlider"></div>
         </div>
     </section>
 
@@ -1074,7 +1071,7 @@
     <!-- Quick Plywood Order Builder Section -->
     <section id="order-builder" style="background: rgba(196, 154, 42, 0.06); border-radius: 60px; margin: 20px;">
         <div class="container" style="max-width: 900px;">
-            <h2 class="section-title" data-aos="fade-up">Build Your Plywood Order</h2>
+            <h2 class="section-title" data-aos="fade-up">Build Your White Ply Order</h2>
             <p class="section-sub" data-aos="fade-up">Pick thickness, size & quantity  -  add as many rows as you need, then send your list straight to us on WhatsApp</p>
 
             <style>
@@ -1090,7 +1087,7 @@
                     border-collapse: collapse;
                 }
                 .plyorder-table thead th {
-                    background: linear-gradient(135deg, #2c2418 0%, #4a3a28 100%);
+                    background: rgba(44, 36, 24, 0.95);
                     color: #e8c46b;
                     font-size: 0.85rem;
                     font-weight: 700;
@@ -1198,7 +1195,8 @@
             </style>
 
             <form id="plyOrderForm" data-aos="fade-up">
-                <input type="text" id="plyUserName" placeholder="Your Name *" required
+                <label for="plyUserName" style="display:block; font-size:0.85rem; font-weight:700; color:#5a4a34; margin-bottom:8px; letter-spacing:0.3px;">Your Name *</label>
+                <input type="text" id="plyUserName" placeholder="Enter your name" required
                     style="width:100%; padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white; margin-bottom: 20px; font-family:'Inter',sans-serif;">
 
                 <div class="plyorder-table-wrap">
@@ -1220,11 +1218,11 @@
                         <i class="fas fa-plus"></i> Add another item
                     </button>
                     <button type="submit" class="btn-primary" style="border:none; justify-content:center; background:#c49a2a; color:#2c2418;">
-                        <i class="fab fa-whatsapp"></i> Send Order on WhatsApp
+                        <i class="fas fa-check-circle"></i> Place Order
                     </button>
                 </div>
             </form>
-            <div id="plyOrderSuccess" style="margin-top: 20px; text-align: center; color: #c49a2a; display: none; font-weight: 700;">✅ Opening WhatsApp with your order...</div>
+            <div id="plyOrderSuccess" style="margin-top: 20px; text-align: center; color: #c49a2a; display: none; font-weight: 700;">✅ Placing your order...</div>
         </div>
     </section>
 
@@ -1263,7 +1261,7 @@
     <section id="directions" style="padding: 80px 0;">
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Find Your Way to Us</h2>
-            <p class="section-sub" data-aos="fade-up">We're conveniently located on Jagannathji Road, Ahmedabad. Drop by anytime  -  we'd love to help you pick the perfect materials for your project.</p>
+            <p class="section-sub" data-aos="fade-up">We're conveniently located at Lati Bazar Zone 1, Jamalpur St Rd, opp. AMC Workshop, Jamalpur, Ahmedabad. Drop by anytime  -  we'd love to help you pick the perfect materials for your project.</p>
             <div data-aos="fade-up" style="border-radius: 30px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.12); border: 2px solid rgba(200,168,107,0.3);">
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.902!2d72.5714!3d23.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLahoti+Plywood+Center!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
@@ -1277,7 +1275,7 @@
                 </iframe>
             </div>
             <div style="text-align: center; margin-top: 30px;" data-aos="fade-up">
-                <a href="https://www.google.com/maps/dir//Lahoti+Plywood+Center,+11,+Jagannathji+Road,+Ahmedabad,+Gujarat" target="_blank" class="btn-primary" style="display: inline-flex;">
+                <a href="https://www.google.com/maps/dir//Lahoti+Plywood+Center,+Lati+Bazar+Zone+1,+Jamalpur+St+Rd,+opp.+AMC+Workshop,+Jamalpur,+Ahmedabad,+Gujarat+380022" target="_blank" class="btn-primary" style="display: inline-flex;">
                     <i class="fas fa-directions"></i> Get Directions on Google Maps
                     <i class="fas fa-external-link-alt"></i>
                 </a>
@@ -1907,6 +1905,65 @@
             });
     })();
 
+    // ===== Randomized "Voices of Trust" testimonials =====
+    (function() {
+        const slider = document.getElementById('testimonialSlider');
+        if (!slider) return;
+
+        // Pool of testimonials. rating = number of gold stars (1-5).
+        const TESTIMONIALS = [
+            { text: 'Excellent quality plywood and laminates. Lahoti Plywood Center has been our go-to supplier for 15+ years. Best rates and honest advice.', name: 'Rajesh Mehta, Architect', rating: 5 },
+            { text: 'The laminate collection is amazing! They helped me choose the perfect finish for my home. Delivery was prompt and service was outstanding.', name: 'Priya Sharma, Homeowner', rating: 5 },
+            { text: 'Best plywood dealer in town! Even for small quantities they provide instant delivery. Highly recommended for quality and trust.', name: 'Suresh Kumar, Contractor', rating: 5 },
+            { text: 'We fitted our entire office interior with material from Lahoti. Consistent quality across every sheet and the team never missed a deadline.', name: 'Ankit Desai, Interior Designer', rating: 5 },
+            { text: 'Genuine BWP plywood at fair prices. My modular kitchen still looks brand new after 4 years. Trustworthy people to deal with.', name: 'Meera Patel, Homeowner', rating: 5 },
+            { text: 'Their veneer and CNC cutting work is top-notch. Whatever design I bring, they execute it perfectly. My clients are always happy.', name: 'Karan Shah, Furniture Maker', rating: 5 },
+            { text: 'Same-day delivery genuinely works here. Got 30 sheets delivered within hours during an urgent site requirement. Lifesavers!', name: 'Vikram Joshi, Builder', rating: 5 },
+            { text: 'Honest guidance on which grade to pick for the budget. They never oversell. That is why we keep coming back for every project.', name: 'Neha Trivedi, Architect', rating: 5 },
+            { text: 'Huge range of laminates under one roof. Spent an hour at their experience center and found exactly the textured finish I wanted.', name: 'Rohit Agarwal, Homeowner', rating: 5 },
+            { text: 'Reliable Fevicol and hardware stock every single time. As a carpenter I depend on their consistency, and they have never let me down.', name: 'Prakash Solanki, Carpenter', rating: 4 },
+            { text: 'From timber to flooring, they handled our villa project end to end. Quality materials and a team that actually cares about your work.', name: 'Sanjay Rao, Contractor', rating: 5 },
+            { text: 'Friendly staff who explain the difference between BWR and BWP clearly. Made my first home renovation stress-free. Thank you Lahoti!', name: 'Divya Nair, Homeowner', rating: 5 }
+        ];
+
+        function escapeHtml(str) {
+            return str.replace(/[&<>"']/g, function(c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        // Fisher-Yates shuffle
+        function shuffle(arr) {
+            const a = arr.slice();
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function stars(n) {
+            let out = '';
+            for (let i = 0; i < 5; i++) {
+                const shade = i < n ? '#c49a2a' : '#e0d3bd';
+                out += '<i class="fas fa-star" style="color:' + shade + ';"></i>';
+            }
+            return out;
+        }
+
+        // Show a random selection (up to 3) on each load.
+        const count = Math.min(3, TESTIMONIALS.length);
+        const picks = shuffle(TESTIMONIALS).slice(0, count);
+
+        slider.innerHTML = picks.map(function(t) {
+            return '<div class="testimonial-card">' +
+                '<div class="testimonial-text"><i class="fas fa-quote-left"></i> ' + escapeHtml(t.text) + '</div>' +
+                '<div class="client-name"> -  ' + escapeHtml(t.name) + '</div>' +
+                '<div>' + stars(t.rating) + '</div>' +
+            '</div>';
+        }).join('');
+    })();
+
     // FAQ Toggle
     function toggleFaq(element) {
         const faqItem = element.parentElement;
@@ -2127,7 +2184,7 @@
         // Location
         if (q.includes('address') || q.includes('location') || q.includes('where') || q.includes('store')) {
             return '<strong>Visit Us:</strong><br><br>' +
-                '• 11, Jagannathji Road, Ahmedabad<br>' +
+                '• Lati Bazar Zone 1, Jamalpur St Rd, opp. AMC Workshop, Jamalpur, Ahmedabad, Gujarat 380022<br>' +
                 '• Phone: +91 93761 72228<br>' +
                 '• Mon-Sat: 9:30 AM - 8 PM<br>' +
                 '• Sunday: 10 AM - 2 PM';
@@ -2180,10 +2237,18 @@
         const THICKNESS = ['18mm', '12mm', '6mm', '4mm'];
 
         // Build the size <option>s allowed for a given thickness.
-        // 4*4 is always available; 8*4 only when 12mm is selected.
+        //   18mm -> only 8*4
+        //   12mm -> 4*4 and 8*4
+        //   6mm / 4mm -> only 4*4
         function sizeOptionsFor(thickness, selectedSize) {
-            const sizes = ['4*4'];
-            if (thickness === '12mm') sizes.push('8*4');
+            let sizes;
+            if (thickness === '18mm') {
+                sizes = ['8*4'];
+            } else if (thickness === '12mm') {
+                sizes = ['4*4', '8*4'];
+            } else {
+                sizes = ['4*4'];
+            }
             return sizes.map(function(s) {
                 const sel = (s === selectedSize) ? ' selected' : '';
                 return '<option value="' + s + '"' + sel + '>' + s + '</option>';
@@ -2242,24 +2307,34 @@
         form.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const name = document.getElementById('plyUserName').value.trim();
-            if (!name) return;
+            const nameInput = document.getElementById('plyUserName');
+            const name = nameInput.value.trim();
+            if (!name) {
+                nameInput.focus();
+                return;
+            }
 
             const rows = rowsContainer.querySelectorAll('tr');
             const items = [];
+            // All fields are mandatory: every row must have thickness, size and a valid quantity.
             for (let i = 0; i < rows.length; i++) {
-                const thickness = rows[i].querySelector('.ply-thickness').value;
-                const size = rows[i].querySelector('.ply-size').value;
-                const qty = rows[i].querySelector('.ply-qty').value.trim();
-                if (!qty || parseInt(qty, 10) < 1) continue;
+                const thicknessSel = rows[i].querySelector('.ply-thickness');
+                const sizeSel = rows[i].querySelector('.ply-size');
+                const qtyInput = rows[i].querySelector('.ply-qty');
+                const thickness = thicknessSel.value;
+                const size = sizeSel.value;
+                const qty = qtyInput.value.trim();
+
+                if (!thickness || !size || !qty || parseInt(qty, 10) < 1) {
+                    alert('Please fill in all fields (thickness, size & quantity) for every item before placing your order.');
+                    if (!qty || parseInt(qty, 10) < 1) qtyInput.focus();
+                    return;
+                }
                 // e.g. "12mm plywood of size 4*4 with quantity as 3"
                 items.push(thickness + ' plywood of size ' + size + ' with quantity as ' + qty);
             }
 
-            if (items.length === 0) {
-                alert('Please enter a quantity for at least one item.');
-                return;
-            }
+            if (items.length === 0) return;
 
             let msg = name + ' need:%0A';
             items.forEach(function(item, idx) {
