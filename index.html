@@ -86,13 +86,14 @@
         }
         
         .logo h1 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             font-weight: 800;
             background: linear-gradient(135deg, #e8c46b 0%, #c49a2a 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             letter-spacing: -0.5px;
+            white-space: nowrap;
         }
         
         .logo span {
@@ -107,7 +108,7 @@
         
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 22px;
             align-items: center;
         }
         
@@ -118,6 +119,7 @@
             transition: 0.3s;
             font-size: 0.95rem;
             position: relative;
+            white-space: nowrap;
         }
         
         .nav-links a::after {
@@ -742,6 +744,16 @@
             50% { opacity: 0.4; transform: scale(0.7); }
         }
 
+        /* Mid-width: switch to hamburger before the full nav gets cramped */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 800px) {
             .nav-links {
@@ -894,6 +906,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#home" class="active">Home</a>
             <a href="#products">Products</a>
+            <a href="#order-builder">Order</a>
             <a href="#laminates">Laminates</a>
             <a href="#why-us">Why Us</a>
             <a href="#testimonials">Testimonials</a>
@@ -1057,6 +1070,163 @@
             <a href="#contact" class="btn-primary" style="background: #e8c46b; color:#2c2418;"><i class="fas fa-calendar-check"></i> Book a Free Consultation</a>
         </div>
     </div>
+
+    <!-- Quick Plywood Order Builder Section -->
+    <section id="order-builder" style="background: rgba(196, 154, 42, 0.06); border-radius: 60px; margin: 20px;">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="section-title" data-aos="fade-up">Build Your Plywood Order</h2>
+            <p class="section-sub" data-aos="fade-up">Pick thickness, size & quantity  -  add as many rows as you need, then send your list straight to us on WhatsApp</p>
+
+            <style>
+                .plyorder-table-wrap {
+                    background: white;
+                    border-radius: 25px;
+                    border: 2px solid rgba(200, 168, 107, 0.3);
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                    overflow: hidden;
+                }
+                .plyorder-table {
+                    width: 100%;
+                    border-collapse: collapse;
+                }
+                .plyorder-table thead th {
+                    background: linear-gradient(135deg, #2c2418 0%, #4a3a28 100%);
+                    color: #e8c46b;
+                    font-size: 0.85rem;
+                    font-weight: 700;
+                    letter-spacing: 0.5px;
+                    text-align: left;
+                    padding: 16px 18px;
+                }
+                .plyorder-table thead th:last-child { text-align: center; }
+                .plyorder-table tbody td {
+                    padding: 14px 18px;
+                    border-bottom: 1px solid #f0e6da;
+                    vertical-align: middle;
+                }
+                .plyorder-table tbody tr:last-child td { border-bottom: none; }
+                .plyorder-table tbody tr:nth-child(even) td { background: #faf6f0; }
+                .plyorder-table select,
+                .plyorder-table input {
+                    width: 100%;
+                    padding: 11px 15px;
+                    border-radius: 50px;
+                    border: 2px solid #d4b88c;
+                    background: white;
+                    font-size: 0.9rem;
+                    color: #2c2418;
+                    font-family: 'Inter', sans-serif;
+                    outline: none;
+                    transition: border-color 0.3s;
+                }
+                .plyorder-table select:focus,
+                .plyorder-table input:focus { border-color: #c49a2a; }
+                .plyorder-remove {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: none;
+                    background: #f0e0e0;
+                    color: #b04a4a;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+                .plyorder-remove:hover { background: #e8c0c0; transform: scale(1.08); }
+                .plyorder-actions {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 16px;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 25px;
+                }
+                .plyorder-add {
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 12px 26px;
+                    border-radius: 50px;
+                    border: 2px dashed #c49a2a;
+                    background: transparent;
+                    color: #8b6914;
+                    font-weight: 700;
+                    font-size: 0.95rem;
+                    cursor: pointer;
+                    transition: all 0.3s;
+                }
+                .plyorder-add:hover { background: rgba(196,154,42,0.1); transform: translateY(-2px); }
+                .plyorder-add i {
+                    background: linear-gradient(135deg, #e8c46b, #c49a2a);
+                    color: #2c2418;
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 0.8rem;
+                }
+                /* Stacked/card layout on small screens for readability */
+                @media (max-width: 700px) {
+                    .plyorder-table thead { display: none; }
+                    .plyorder-table,
+                    .plyorder-table tbody,
+                    .plyorder-table tr,
+                    .plyorder-table td { display: block; width: 100%; }
+                    .plyorder-table tbody tr {
+                        border-bottom: 2px solid #f0e6da;
+                        padding: 8px 0;
+                    }
+                    .plyorder-table tbody tr:nth-child(even) td { background: transparent; }
+                    .plyorder-table tbody td {
+                        border-bottom: none;
+                        padding: 8px 18px;
+                        position: relative;
+                    }
+                    .plyorder-table tbody td::before {
+                        content: attr(data-label);
+                        display: block;
+                        font-size: 0.75rem;
+                        font-weight: 700;
+                        color: #5a4a34;
+                        margin-bottom: 5px;
+                        letter-spacing: 0.3px;
+                    }
+                    .plyorder-table td.plyorder-remove-cell { text-align: right; }
+                }
+            </style>
+
+            <form id="plyOrderForm" data-aos="fade-up">
+                <input type="text" id="plyUserName" placeholder="Your Name *" required
+                    style="width:100%; padding: 15px 20px; border-radius: 50px; border: 2px solid #d4b88c; background: white; margin-bottom: 20px; font-family:'Inter',sans-serif;">
+
+                <div class="plyorder-table-wrap">
+                    <table class="plyorder-table">
+                        <thead>
+                            <tr>
+                                <th>Thickness</th>
+                                <th>Size (ft)</th>
+                                <th>Quantity</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="plyOrderRows"></tbody>
+                    </table>
+                </div>
+
+                <div class="plyorder-actions">
+                    <button type="button" class="plyorder-add" id="plyAddRow">
+                        <i class="fas fa-plus"></i> Add another item
+                    </button>
+                    <button type="submit" class="btn-primary" style="border:none; justify-content:center; background:#c49a2a; color:#2c2418;">
+                        <i class="fab fa-whatsapp"></i> Send Order on WhatsApp
+                    </button>
+                </div>
+            </form>
+            <div id="plyOrderSuccess" style="margin-top: 20px; text-align: center; color: #c49a2a; display: none; font-weight: 700;">✅ Opening WhatsApp with your order...</div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" style="background: rgba(232, 196, 107, 0.08); border-radius: 60px; margin: 20px;">
@@ -1683,46 +1853,57 @@
         "@type": "HardwareStore",
         "name": "Lahoti Plywood Center",
         "description": "Premium plywood, laminates, veneers, MDF and timber supplier since 1975. Quality guaranteed, instant delivery.",
-        "address": { "@type": "PostalAddress", "streetAddress": "11, Jagannathji Road", "addressLocality": "Ahmedabad", "addressRegion": "Gujarat", "addressCountry": "IN" },
+        "address": { "@type": "PostalAddress", "streetAddress": "Lati Bazar Zone 1, Jamalpur St Rd, opp. AMC Workshop, Jamalpur", "addressLocality": "Ahmedabad", "addressRegion": "Gujarat", "postalCode": "380022", "addressCountry": "IN" },
         "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "458" },
         "priceRange": "RsRs",
         "telephone": "+919376172228"
     });
     document.head.appendChild(scriptSchema);
 
-    // Dynamic Visitor Counter using CountAPI (real-time, server-based)
+    // Dynamic Visitor Counter using Abacus (real-time, server-based, free)
+    // Docs: https://abacus.jasoncameron.dev  ->  GET /hit/{namespace}/{key} => { value: N }
     (function() {
         const counterEl = document.getElementById('visitorCount');
-        const namespace = 'lahotiplywoodcenter';
+        const namespace = 'lahotiplywoodcenter.com';
         const key = 'website-visits';
+        const base = 'https://abacus.jasoncameron.dev';
 
-        // Use CountAPI for a real dynamic counter
-        fetch('https://api.countapi.xyz/hit/' + namespace + '/' + key)
+        // Only increment (hit) once per browser session; subsequent loads/refreshes
+        // just read the current value (get) so a refresh doesn't inflate the count.
+        const alreadyCounted = sessionStorage.getItem('lahotVisited');
+        const endpoint = alreadyCounted ? '/get/' : '/hit/';
+
+        function animateTo(target) {
+            target = parseInt(target, 10) || 0;
+            let current = 0;
+            const increment = Math.max(1, Math.ceil(target / 60));
+            const counterAnimation = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(counterAnimation);
+                }
+                counterEl.textContent = current.toLocaleString();
+            }, 30);
+        }
+
+        fetch(base + endpoint + namespace + '/' + key)
             .then(response => response.json())
             .then(data => {
-                const target = data.value;
-                // Animate the number counting up
-                let current = 0;
-                const increment = Math.ceil(target / 60);
-                const counterAnimation = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(counterAnimation);
-                    }
-                    counterEl.textContent = current.toLocaleString();
-                }, 30);
+                sessionStorage.setItem('lahotVisited', 'true');
+                // Keep a local mirror so the fallback stays realistic if the API is ever down.
+                localStorage.setItem('lahotVisitorCount', data.value);
+                animateTo(data.value);
             })
             .catch(() => {
-                // Fallback: use localStorage if API is unavailable
+                // Fallback: use localStorage if the API is unavailable
                 let count = parseInt(localStorage.getItem('lahotVisitorCount') || '0');
-                const visited = sessionStorage.getItem('lahotVisited');
-                if (!visited) {
+                if (!alreadyCounted) {
                     count++;
                     localStorage.setItem('lahotVisitorCount', count);
                     sessionStorage.setItem('lahotVisited', 'true');
                 }
-                counterEl.textContent = count.toLocaleString();
+                animateTo(count);
             });
     })();
 
@@ -1988,7 +2169,114 @@
             '• "Delivery info"<br><br>' +
             'Just type naturally - include room size for estimates!';
     }
+
+    // ===== Plywood Order Builder =====
+    (function() {
+        const rowsContainer = document.getElementById('plyOrderRows');
+        const addBtn = document.getElementById('plyAddRow');
+        const form = document.getElementById('plyOrderForm');
+        if (!rowsContainer || !addBtn || !form) return;
+
+        const THICKNESS = ['18mm', '12mm', '6mm', '4mm'];
+
+        // Build the size <option>s allowed for a given thickness.
+        // 4*4 is always available; 8*4 only when 12mm is selected.
+        function sizeOptionsFor(thickness, selectedSize) {
+            const sizes = ['4*4'];
+            if (thickness === '12mm') sizes.push('8*4');
+            return sizes.map(function(s) {
+                const sel = (s === selectedSize) ? ' selected' : '';
+                return '<option value="' + s + '"' + sel + '>' + s + '</option>';
+            }).join('');
+        }
+
+        function createRow() {
+            const row = document.createElement('tr');
+            row.innerHTML =
+                '<td data-label="Thickness">' +
+                    '<select class="ply-thickness">' +
+                        THICKNESS.map(function(t) { return '<option value="' + t + '">' + t + '</option>'; }).join('') +
+                    '</select>' +
+                '</td>' +
+                '<td data-label="Size (ft)">' +
+                    '<select class="ply-size"></select>' +
+                '</td>' +
+                '<td data-label="Quantity">' +
+                    '<input type="number" class="ply-qty" min="1" placeholder="e.g. 3" required>' +
+                '</td>' +
+                '<td class="plyorder-remove-cell" data-label="">' +
+                    '<button type="button" class="plyorder-remove" title="Remove item"><i class="fas fa-trash-alt"></i></button>' +
+                '</td>';
+
+            const thicknessSel = row.querySelector('.ply-thickness');
+            const sizeSel = row.querySelector('.ply-size');
+            const removeBtn = row.querySelector('.plyorder-remove');
+
+            function refreshSizes() {
+                sizeSel.innerHTML = sizeOptionsFor(thicknessSel.value, sizeSel.value);
+            }
+            refreshSizes();
+
+            thicknessSel.addEventListener('change', refreshSizes);
+            removeBtn.addEventListener('click', function() {
+                // Keep at least one row on screen.
+                if (rowsContainer.querySelectorAll('tr').length > 1) {
+                    row.remove();
+                } else {
+                    thicknessSel.value = THICKNESS[0];
+                    refreshSizes();
+                    row.querySelector('.ply-qty').value = '';
+                }
+            });
+
+            return row;
+        }
+
+        // Start with one row.
+        rowsContainer.appendChild(createRow());
+
+        addBtn.addEventListener('click', function() {
+            rowsContainer.appendChild(createRow());
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('plyUserName').value.trim();
+            if (!name) return;
+
+            const rows = rowsContainer.querySelectorAll('tr');
+            const items = [];
+            for (let i = 0; i < rows.length; i++) {
+                const thickness = rows[i].querySelector('.ply-thickness').value;
+                const size = rows[i].querySelector('.ply-size').value;
+                const qty = rows[i].querySelector('.ply-qty').value.trim();
+                if (!qty || parseInt(qty, 10) < 1) continue;
+                // e.g. "12mm plywood of size 4*4 with quantity as 3"
+                items.push(thickness + ' plywood of size ' + size + ' with quantity as ' + qty);
+            }
+
+            if (items.length === 0) {
+                alert('Please enter a quantity for at least one item.');
+                return;
+            }
+
+            let msg = name + ' need:%0A';
+            items.forEach(function(item, idx) {
+                msg += (idx + 1) + '. ' + encodeURIComponent(item) + '%0A';
+            });
+
+            document.getElementById('plyOrderSuccess').style.display = 'block';
+
+            setTimeout(function() {
+                window.open('https://wa.me/919376172228?text=' + msg, '_blank');
+            }, 600);
+
+            setTimeout(function() {
+                document.getElementById('plyOrderSuccess').style.display = 'none';
+            }, 6000);
+        });
+    })();
 </script>
 </body>
 </html>
-
